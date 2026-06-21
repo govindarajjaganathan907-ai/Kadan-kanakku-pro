@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    match /users/{userId} {
+      allow read, write: if isSignedIn() && request.auth.uid == userId;
+    }
+
+    // For a single-lender app every signed-in user manages their own data.
+    // If you support multiple lenders sharing one app, add an `ownerId`
+    // field to loans/payments/interestRecords and restrict accordingly.
+    match /loans/{loanId} {
+      allow read, write: if isSignedIn();
+    }
+
+    match /payments/{paymentId} {
+      allow read, write: if isSignedIn();
+    }
+
+    match /interestRecords/{recordId} {
+      allow read, write: if isSignedIn();
+    }
+  }
+}
