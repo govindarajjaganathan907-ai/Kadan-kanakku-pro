@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "870935916738",
+    "project_id": "kadan-kanakku-pro",
+    "storage_bucket": "kadan-kanakku-pro.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870935916738:android:ac510ea037161230b6cb5b",
+        "android_client_info": {
+          "package_name": "com.example.kadan_kanakku_pro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC37dhn7E1LhBLzilaDGZ_Z1HKtlfaUNl8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
